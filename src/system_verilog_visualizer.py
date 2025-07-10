@@ -1,11 +1,12 @@
 '''
 Python script that reads a SystemVerilog file and 
-generates a dataflow graph that shows it architecture
+generates a dataflow graph that shows its architecture
 '''
 
 import pyverilog.vparser.ast as vast
 from pyverilog.vparser.parser import parse
 from graphviz import Digraph
+import argparse # Import the argparse module
 
 def system_verilog_visualizer(file_path):
     # Parse the SystemVerilog file
@@ -38,6 +39,12 @@ def system_verilog_visualizer(file_path):
     # Render the graph
     dot.render('cgra_module_hierarchy', view=True) # Renders to cgra_module_hierarchy.svg and opens it
 
-# Example usage:
-# Assuming your SystemVerilog file is named 'cgra_design.sv'
-# system_verilog_visualizer('cgra_design.sv')
+if __name__ == "__main__": 
+    # Create the parser
+    parser = argparse.ArgumentParser(description='Generate a dataflow graph from a SystemVerilog file.')
+    parser.add_argument('file_path', type=str, 
+                        help='The path to the SystemVerilog file (e.g., ./example_code_inputs/serdes.sv)')
+    args = parser.parse_args()
+
+    # Call the function with the provided file path
+    system_verilog_visualizer(args.file_path)
