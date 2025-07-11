@@ -1,5 +1,3 @@
-// serdes_pkg.sv
-// Package for common SERDES configurations
 package serdes_pkg;
 
   parameter int DATA_WIDTH = 8;     // Width of the parallel data

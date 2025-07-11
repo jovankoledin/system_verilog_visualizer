@@ -1,0 +1,25 @@
+// SystemVerilog Module Hierarchy
+digraph {
+	node [fontname=Helvetica shape=box style=rounded]
+	edge [fontname=Helvetica]
+	rankdir=TB splines=ortho
+	intermediate_module_1 [label=intermediate_module_1]
+	complex_module [label=complex_module]
+	leaf_module_a [label=leaf_module_a]
+	leaf_module_b [label=leaf_module_b]
+	top_test_module [label=top_test_module]
+	intermediate_module_2 [label=intermediate_module_2]
+	empty_module [label=empty_module]
+	no_ports_module [label=no_ports_module]
+	uninstantiated_module [label=uninstantiated_module]
+	intermediate_module_1 -> leaf_module_a
+	intermediate_module_1 -> leaf_module_b
+	intermediate_module_2 -> leaf_module_a
+	intermediate_module_2 -> leaf_module_b
+	complex_module -> intermediate_module_1
+	complex_module -> intermediate_module_2
+	complex_module -> leaf_module_b
+	complex_module -> leaf_module_a
+	top_test_module -> intermediate_module_1
+	top_test_module -> complex_module
+}
