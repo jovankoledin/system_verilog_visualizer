@@ -1,0 +1,26 @@
+digraph {
+	graph [bb="0,0,299.5,108",
+		rankdir=TB,
+		splines=ortho
+	];
+	node [fontname=Helvetica,
+		label="\N",
+		shape=box,
+		style=rounded
+	];
+	edge [fontname=Helvetica];
+	serdes_top	[height=0.5,
+		label=serdes_top,
+		pos="145,90",
+		width=1.2778];
+	serdes_serializer	[height=0.5,
+		label=serdes_serializer,
+		pos="66,18",
+		width=1.8333];
+	serdes_top -> serdes_serializer	[pos="e,115.5,36.413 115.5,71.831 115.5,71.831 115.5,46.413 115.5,46.413"];
+	serdes_deserializer	[height=0.5,
+		label=serdes_deserializer,
+		pos="225,18",
+		width=2.0694];
+	serdes_top -> serdes_deserializer	[pos="e,170.75,36.413 170.75,71.831 170.75,71.831 170.75,46.413 170.75,46.413"];
+}

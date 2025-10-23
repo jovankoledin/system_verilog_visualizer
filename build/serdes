@@ -1,0 +1,11 @@
+// SystemVerilog Module Hierarchy
+digraph {
+	node [fontname=Helvetica shape=box style=rounded]
+	edge [fontname=Helvetica]
+	rankdir=TB splines=ortho
+	serdes_top [label=serdes_top]
+	serdes_serializer [label=serdes_serializer]
+	serdes_deserializer [label=serdes_deserializer]
+	serdes_top -> serdes_serializer
+	serdes_top -> serdes_deserializer
+}
